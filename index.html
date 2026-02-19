@@ -164,12 +164,6 @@
       font-weight: 500;
       padding: 8px 16px;
       border-radius: 100px;
-      transition: all 0.2s;
-    }
-
-    .skill-tag:hover, .skill-tag:active {
-      background: rgba(200,240,96,0.15);
-      border-color: var(--accent);
     }
 
     .skill-bars { display: flex; flex-direction: column; gap: 12px; }
@@ -212,10 +206,7 @@
       display: flex;
       gap: 14px;
       align-items: flex-start;
-      transition: transform 0.2s;
     }
-
-    .exp-card:active { transform: scale(0.98); }
 
     .exp-icon {
       width: 44px;
@@ -239,12 +230,11 @@
       gap: 12px;
     }
 
-    .contact-btn {
+    .contact-card {
       background: var(--card);
       border: 1px solid rgba(255,255,255,0.06);
       border-radius: 16px;
       padding: 16px;
-      text-decoration: none;
       color: var(--text);
       display: flex;
       flex-direction: column;
@@ -252,17 +242,15 @@
       gap: 8px;
       font-size: 13px;
       font-weight: 500;
-      transition: all 0.2s;
+      
+      pointer-events: none;
+      user-select: none;
+      cursor: default;
     }
 
-    .contact-btn:active {
-      background: rgba(200,240,96,0.1);
-      border-color: var(--accent);
-    }
+    .contact-card .icon { font-size: 24px; }
 
-    .contact-btn .icon { font-size: 24px; }
-
-    .contact-btn.primary {
+    .contact-card.primary {
       grid-column: span 2;
       flex-direction: row;
       justify-content: center;
@@ -271,6 +259,16 @@
       font-weight: 700;
       font-size: 15px;
       border-color: var(--accent);
+    }
+
+    .contact-card .info {
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: -4px;
+    }
+
+    .contact-card.primary .info {
+      color: rgba(0,0,0,0.5);
     }
 
     .footer {
@@ -292,18 +290,16 @@
 <body>
   <div class="container">
 
+
     <div class="hero">
       <div class="avatar-wrap">
-
         <img
           class="avatar"
           src="Photo.jpg"
           alt="Kleizer Benz Manzano"
           onerror="this.style.display='none'; document.getElementById('fallback').style.display='flex';"
         />
-
         <div id="fallback" class="avatar-fallback">KB</div>
-
         <div class="status-dot"></div>
       </div>
 
@@ -312,6 +308,7 @@
       <p class="hobby">🏸 Badminton &nbsp;&nbsp;|&nbsp;&nbsp; 🏊 Swimming</p>
       <p class="bio">I'm Kleizer Benz Manzano, a student who likes to be active and in touch with nature. I enjoy playing badminton because it challenges me to get better and keeps me motivated.</p>
     </div>
+
 
     <div class="section">
       <p class="section-title">Skills</p>
@@ -322,6 +319,7 @@
       </div>
     </div>
 
+    
     <div class="section">
       <p class="section-title">Proficiency</p>
       <div class="skill-bars">
@@ -340,6 +338,7 @@
       </div>
     </div>
 
+    
     <div class="section">
       <p class="section-title">Experience</p>
       <div class="exp-card">
@@ -367,36 +366,44 @@
       </div>
     </div>
 
+
     <div class="section">
       <p class="section-title">Get In Touch</p>
       <div class="contact-grid">
-        <a href="mailto:your@email.com" class="contact-btn primary">
-          <span class="icon">✉️</span> Email Me
-        </a>
-        <a href="mailto:your@gmail.com" class="contact-btn">
+
+        <div class="contact-card primary">
+          <span class="icon">✉️</span>
+          <span>Email Me</span>
+        </div>
+
+        <div class="contact-card">
           <span class="icon">📧</span>
           <span>Gmail</span>
-        </a>
-        <a href="https://instagram.com" class="contact-btn">
+        </div>
+
+        <div class="contact-card">
           <span class="icon">📸</span>
           <span>Instagram</span>
-        </a>
-        <a href="https://twitter.com" class="contact-btn">
+        </div>
+
+        <div class="contact-card">
           <span class="icon">🐦</span>
           <span>Twitter</span>
-        </a>
-        <a href="https://linkedin.com" class="contact-btn">
+        </div>
+
+        <div class="contact-card">
           <span class="icon">💼</span>
           <span>LinkedIn</span>
-        </a>
+        </div>
+
       </div>
     </div>
 
+    
     <div class="footer">
       Created 2026 <span>©</span> Kleizer Benz Manzano
     </div>
 
   </div>
 </body>
-
 </html>
